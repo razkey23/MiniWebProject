@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mavespringtest.model.Department;
-import com.mavespringtest.model.Employee;
 import com.mavespringtest.model.Employees;
 import com.mavespringtest.repository.EmployeesRepository;
 
