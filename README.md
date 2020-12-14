@@ -94,7 +94,7 @@ Tools Used:
  ### Built-in API Client
  
  You can go to localhost:8080/webservices , there you are presented with an interface similar to postman. You can send the request as explained in the webservices page.
- * Provided that you sent a valid API request * , a text area will pop presenting you with the xml-response from the API endpoints. In case you make a mistake in the request
+ **Provided that you sent a valid API request** , a text area will pop presenting you with the xml-response from the API endpoints. In case you make a mistake in the request
  you are redirected to an error page ,and you need to get back to localhost:8080/webservices manually to resend a API request.
   API client is implemented in files : 
   * [Web Servlet](https://github.com/razkey23/MiniWebProject/blob/master/mavenspringtest/src/main/java/com/mavespringtest/controller/WebServicesClientController.java)
