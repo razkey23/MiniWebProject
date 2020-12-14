@@ -76,7 +76,7 @@ Tools Used:
  working at a specific department.Finally ,by hovering over the text box "employee's name" info you can see all the info about employees
  
  ### API Endpoints
- API endpoints implemented in mavenspringtest/src/main/java/com/mavespringtest/controller/ApiController.java  
+ API endpoints implemented in [API endpoints](https://github.com/razkey23/MiniWebProject/blob/master/mavenspringtest/src/main/java/com/mavespringtest/controller/ApiController.java) 
  
  |API Endpoint|Response|
  |-|-|
