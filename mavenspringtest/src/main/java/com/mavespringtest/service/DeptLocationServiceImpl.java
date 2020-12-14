@@ -19,5 +19,8 @@ public class DeptLocationServiceImpl implements DeptLocationService{
 	public List<DeptLocation> getAllDeptLocations() {
 		return deptLocationRepository.findAll();
 	}
+	public DeptLocation getDeptLocationById(Long locId){
+		return deptLocationRepository.findById(locId).get();
+	}
 
 }

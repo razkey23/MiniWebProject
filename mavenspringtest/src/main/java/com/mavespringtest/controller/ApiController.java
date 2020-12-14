@@ -58,7 +58,7 @@ public class ApiController {
 	}
 	
 	@GetMapping(value="employeesSearch",produces="application/xml")
-	public List<Employees> getEmployeesByNames(@RequestParam("fname") String fname,@RequestParam("lname") String lname,Model model){
+	public List<Employees> getEmployeesByNames(@Valid@RequestParam("fname") String fname,@Valid@RequestParam("lname") String lname,Model model){
 		return employeesService.getEmployeesByName(fname,lname);
 	}
 	

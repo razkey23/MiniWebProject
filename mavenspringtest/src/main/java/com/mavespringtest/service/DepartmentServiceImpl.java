@@ -39,5 +39,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 		}
 		return result;
 	}
+	
+	public Department getDepartmentByDeptid(Long Deptid) {
+		return departmentRepository.findById(Deptid).get();
+	}
 
 }

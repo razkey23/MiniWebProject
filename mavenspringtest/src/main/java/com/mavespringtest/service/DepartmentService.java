@@ -9,5 +9,6 @@ public interface DepartmentService {
 	
 	List<Department> getAllDepartments();
 	List<Department> getDepartmentsByLocId(Long locId);
+	Department getDepartmentByDeptid(Long Deptid);
 
 }

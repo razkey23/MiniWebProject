@@ -7,6 +7,46 @@
 <html>
 <style>
 
+.buttons {
+        width: 10%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        background-color: #4CAF50;
+        
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+
+#tapi {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top:25px;
+  table-layout: fixed;
+}
+
+#tapi td, #tapi th {
+  text-align:center;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+#tapi tr:nth-child(even){background-color: #f2f2f2;}
+
+#tapi tr:hover {background-color: #ddd;}
+
+#tapi th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
 .dropbtn {
   background-color: #4CAF50;
   color: white;
@@ -66,34 +106,44 @@
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 
-
-
-
 </style>
 <head><%@ page isELIgnored="false" %>
 <meta charset="ISO-8859-1">
-<title>GOT HERE</title>
+<title>Employees</title>
 </head>
 <body> 
-<h1>List Of Employees</h1>
-
+<%
+    String deptName=(String) request.getAttribute("deptName");
+	String locationName=(String) request.getAttribute("locationName");
+%>
+<h1 style="text-align:center;">Employees working at <%=deptName %> in <%=locationName %></h1>
+<table class=buttons>
+<tr>
+<td>
 <form  method="Get" action="/location/${locid}">
     	<a>
  		<button name="Back">Back To Departments</button>
    		</a>
 </form>
+</td>
+</tr>
+<tr>
+<td>
 <form  method="Get" action="/location/back">
     	<a>
  		<button name="Back">Back To Locations</button>
    		</a>
 </form>
-
+</td>
+<tr>
+</table>
 	
-<table style="width:1000px; border: 1px solid black">
+<table id="tapi">
 	<tr>
 		<th align="center">Employee Id</th>
 		<th align= "center">First Name</th>
 		<th align= "center">Last Name</th>
+		<th>Employee Info</th>
 	</tr>
     <c:forEach items="${listEmployees}" var="employee">
         <tr>
@@ -102,7 +152,7 @@
             <td align="center"><c:out value="${employee.getLastName()}"/></td>  
 			<td align="center">
 				<div class="dropdown">
-  					<button class="dropbtn">Employee Info</button>
+  					<button class="dropbtn"><c:out value="${employee.getFirstName()}"/>'s Information</button>
   					<div class="dropdown-content"> 
   						<table>
   							<tr>
@@ -114,7 +164,7 @@
   								<td> <c:out value="${employee.getJob()}"/></td>
   							</tr>
   							<tr>
-  								<td align="center">Manager: </td>
+  								<td align="center">Manager's ID: </td>
   								<td> <c:out value="${employee.getMngid()}"/></td>
   							</tr>
   							<tr>

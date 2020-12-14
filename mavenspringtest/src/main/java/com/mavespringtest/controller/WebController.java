@@ -35,6 +35,8 @@ public class WebController {
 	@GetMapping("/location/{loc}")
 	//@RequestMapping("/employee")
 	public String viewHomePage1(@Valid@PathVariable("loc") Long locId,Model model) {
+		//Find Location by locId
+		model.addAttribute("locationName",deptLocationService.getDeptLocationById(locId).getLocname());
 		model.addAttribute("listdepts",departmentService.getDepartmentsByLocId(locId));
 		return "departments";
 	}
@@ -43,6 +45,9 @@ public class WebController {
 	@GetMapping(value= {"location/{locid}/department/{deptid}","/department/{deptid}/back"})
 	public String viewHomePage3(@Valid@PathVariable("deptid") Long deptid,@Valid@PathVariable("locid") Long locid,Model model) {
 		model.addAttribute("locid",  locid);
+		model.addAttribute("locationName",deptLocationService.getDeptLocationById(locid).getLocname());
+		//Find department's name via deptid
+		model.addAttribute("deptName",departmentService.getDepartmentByDeptid(deptid).getDname());
 		//System.out.println(employeesService.getEmployeesByDeptId(deptid).get(0));
 		if(employeesService.getEmployeesByDeptId(deptid).size()!=0) {
 			model.addAttribute("listEmployees",employeesService.getEmployeesByDeptId(deptid));

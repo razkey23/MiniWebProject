@@ -6,5 +6,5 @@ import com.mavespringtest.model.DeptLocation;
 
 public interface DeptLocationService {
 	List<DeptLocation> getAllDeptLocations();
-
+	DeptLocation getDeptLocationById(Long locId);
 }
