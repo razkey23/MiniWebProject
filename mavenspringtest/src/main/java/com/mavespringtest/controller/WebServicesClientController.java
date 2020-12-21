@@ -127,10 +127,11 @@ public class WebServicesClientController {
 		System.out.println(apirequest);
 		final ClientConfig clientConfig = new DefaultClientConfig();
 		final Client client = Client.create(clientConfig);
-		final WebResource webResource = client.resource(UriBuilder.fromUri("http://localhost:8080").build());
-		//System.out.println(webResource.path("api").path("location").accept(MediaType.APPLICATION_JSON).get(String.class));
-		String xmlString=webResource.path("api").path(apirequest).accept(MediaType.APPLICATION_XML).get(String.class);
 		
+		final WebResource webResource = client.resource(UriBuilder.fromUri("http://localhost:8080/api/"+ apirequest).build());
+		System.out.println(apirequest);
+		
+		String xmlString=webResource.accept(MediaType.APPLICATION_XML).get(String.class);
 		Document xmlDoc = null;
         String formattedXML="/n";
         try {
